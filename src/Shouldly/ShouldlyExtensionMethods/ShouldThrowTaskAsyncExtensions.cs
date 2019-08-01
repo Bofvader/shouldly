@@ -10,59 +10,59 @@ namespace Shouldly
     public static class ShouldThrowAsyncExtensions
     {
         /*** ShouldThrowAsync(Task) ***/
-        public static Task<TException> ShouldThrowAsync<TException>(this Task task) where TException : Exception
+        public async static Task<TException> ShouldThrowAsync<TException>(this Task task) where TException : Exception
         {
-            return Should.ThrowAsync<TException>(task);
+            return await Should.ThrowAsync<TException>(task);
         }
-        public static Task<TException> ShouldThrowAsync<TException>(this Task task, string customMessage) where TException : Exception
+        public async static Task<TException> ShouldThrowAsync<TException>(this Task task, string customMessage) where TException : Exception
         {
-            return Should.ThrowAsync<TException>(task, customMessage);
+            return await Should.ThrowAsync<TException>(task, customMessage);
         }
-        public static Task<TException> ShouldThrowAsync<TException>(this Task task, [InstantHandle] Func<string> customMessage) where TException : Exception
+        public async static Task<TException> ShouldThrowAsync<TException>(this Task task, [InstantHandle] Func<string> customMessage) where TException : Exception
         {
-            return Should.ThrowAsync<TException>(task, customMessage);
+            return await Should.ThrowAsync<TException>(task, customMessage);
         }
 
         /*** ShouldThrowAsync(Task) ***/
-        public static Task<Exception> ShouldThrowAsync(this Task task, Type exceptionType)
+        public async static Task<Exception> ShouldThrowAsync(this Task task, Type exceptionType)
         {
-            return Should.ThrowAsync(task, exceptionType);
+            return await Should.ThrowAsync(task, exceptionType);
         }
-        public static Task<Exception> ShouldThrowAsync(this Task task, string customMessage, Type exceptionType)
+        public async static Task<Exception> ShouldThrowAsync(this Task task, string customMessage, Type exceptionType)
         {
-            return Should.ThrowAsync(task, customMessage, exceptionType);
+            return await Should.ThrowAsync(task, customMessage, exceptionType);
         }
-        public static Task<Exception> ShouldThrowAsync(this Task task, [InstantHandle] Func<string> customMessage, Type exceptionType)
+        public async static Task<Exception> ShouldThrowAsync(this Task task, [InstantHandle] Func<string> customMessage, Type exceptionType)
         {
-            return Should.ThrowAsync(task, customMessage, exceptionType);
-        }
-
-        /*** ShouldThrowAsync(Func<Task>) ***/
-        public static Task<TException> ShouldThrowAsync<TException>(this Func<Task> actual) where TException : Exception
-        {
-            return Should.ThrowAsync<TException>(actual);
-        }
-        public static Task<TException> ShouldThrowAsync<TException>(this Func<Task> actual, string customMessage) where TException : Exception
-        {
-            return Should.ThrowAsync<TException>(actual, customMessage);
-        }
-        public static Task<TException> ShouldThrowAsync<TException>(this Func<Task> actual, [InstantHandle] Func<string> customMessage) where TException : Exception
-        {
-            return Should.ThrowAsync<TException>(actual, customMessage);
+            return await Should.ThrowAsync(task, customMessage, exceptionType);
         }
 
         /*** ShouldThrowAsync(Func<Task>) ***/
-        public static Task<Exception> ShouldThrowAsync(this Func<Task> actual, Type exceptionType)
+        public async static Task<TException> ShouldThrowAsync<TException>(this Func<Task> actual) where TException : Exception
         {
-            return Should.ThrowAsync(actual, exceptionType);
+            return await Should.ThrowAsync<TException>(actual);
         }
-        public static Task<Exception> ShouldThrowAsync(this Func<Task> actual, string customMessage, Type exceptionType)
+        public async static Task<TException> ShouldThrowAsync<TException>(this Func<Task> actual, string customMessage) where TException : Exception
         {
-            return Should.ThrowAsync(actual, customMessage, exceptionType);
+            return await Should.ThrowAsync<TException>(actual, customMessage);
         }
-        public static Task<Exception> ShouldThrowAsync(this Func<Task> actual, [InstantHandle] Func<string> customMessage, Type exceptionType)
+        public async static Task<TException> ShouldThrowAsync<TException>(this Func<Task> actual, [InstantHandle] Func<string> customMessage) where TException : Exception
         {
-            return Should.ThrowAsync(actual, customMessage, exceptionType);
+            return await Should.ThrowAsync<TException>(actual, customMessage);
+        }
+
+        /*** ShouldThrowAsync(Func<Task>) ***/
+        public async static Task<Exception> ShouldThrowAsync(this Func<Task> actual, Type exceptionType)
+        {
+            return await Should.ThrowAsync(actual, exceptionType);
+        }
+        public async static Task<Exception> ShouldThrowAsync(this Func<Task> actual, string customMessage, Type exceptionType)
+        {
+            return await Should.ThrowAsync(actual, customMessage, exceptionType);
+        }
+        public async static Task<Exception> ShouldThrowAsync(this Func<Task> actual, [InstantHandle] Func<string> customMessage, Type exceptionType)
+        {
+            return await Should.ThrowAsync(actual, customMessage, exceptionType);
         }
     }
 }
